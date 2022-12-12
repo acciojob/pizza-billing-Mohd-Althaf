@@ -44,15 +44,16 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-
-        System.out.println("Base Price Of The Pizza: "+this.price);
+    StringBuilder ans = new StringBuilder();
+        ans.append("Base Price Of The Pizza: "+this.price + "\n");
         if(cheese)
-        System.out.println("Extra Cheese Added: "+this.cheeseprice);
+        ans.append("Extra Cheese Added: "+this.cheeseprice + "\n");
         if(topping)
-        System.out.println("Extra Toppings Added: "+this.toppingprice);
+        ans.append("Extra Toppings Added: "+this.toppingprice+"\n");
         if(paper)
-        System.out.println("Paperbag Added: "+this.paperprice);
+        ans.append("Paperbag Added: "+this.paperprice+"\n");
         int abc = this.price+this.cheeseprice+this.toppingprice+this.paperprice;
-        return "Total Price: "+abc;
+        ans.append("Total Price: "+abc+"\n");
+        return ans.toString();
     }
 }
