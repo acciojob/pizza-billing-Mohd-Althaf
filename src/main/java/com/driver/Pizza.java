@@ -46,12 +46,18 @@ public class Pizza {
         // your code goes here
     StringBuilder ans = new StringBuilder();
         ans.append("Base Price Of The Pizza: "+this.price + "\n");
-        if(cheese)
-        ans.append("Extra Cheese Added: "+this.cheeseprice + "\n");
-        if(topping)
-        ans.append("Extra Toppings Added: "+this.toppingprice+"\n");
-        if(paper)
-        ans.append("Paperbag Added: "+this.paperprice+"\n");
+        if(cheese) {
+            ans.append("Extra Cheese Added: " + this.cheeseprice + "\n");
+            cheese = false;
+        }
+        if(topping) {
+            ans.append("Extra Toppings Added: " + this.toppingprice + "\n");
+            topping = false;
+        }
+        if(paper) {
+            ans.append("Paperbag Added: " + this.paperprice + "\n");
+            paper = false;
+        }
         int abc = this.price+this.cheeseprice+this.toppingprice+this.paperprice;
         ans.append("Total Price: "+abc+"\n");
         return ans.toString();
